@@ -5,10 +5,12 @@ fun fizzBuzz(startInt: Int, endInt: Int): String {
 
     return ((startInt..endInt).map {
         when {
-            it.rem(3) == 0 && it.rem(5) == 0 -> "fizzbuzz"
-            it.rem(3) == 0 -> "fizz"
-            it.rem(5) == 0 -> "buzz"
+            hasRem(3, it) && hasRem(5, it) -> "fizzbuzz"
+            hasRem(3, it) -> "fizz"
+            hasRem(5, it) -> "buzz"
             else -> it.toString()
         }
     }).joinToString(", ")
 }
+
+fun hasRem(divisor: Int, dividend: Int) = dividend.rem(divisor) == 0
