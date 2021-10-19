@@ -61,9 +61,23 @@ internal class FizzBuzzKtTest {
     }
 
     @Test
+    fun fizzBuzzStartIntEqualEndInt2() {
+        val expected = "4"
+        val result = fizzBuzz(4, 4)
+        assertEquals(expected, result)
+    }
+
+    @Test
     fun fizzBuzzTestZeroValue() {
         val expected = "0"
         val result = fizzBuzz(0, 0)
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun fizzBuzzTestZerotoThree() {
+        val expected = "0, 1, 2, fizz"
+        val result = fizzBuzz(0, 3)
         assertEquals(expected, result)
     }
 }
